@@ -1,10 +1,39 @@
 import React from "react";
-
+import {
+  Container,
+  Form,
+  FormControl,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 function Header() {
   return (
-    <div>
-      <>HEADER</>
-    </div>
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: "100px" }}>
+            <Form className="d-flex">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+            </Form>
+          </Nav>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">My Notes</Nav.Link>
+
+            <NavDropdown title="Wilfred Erdo" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
