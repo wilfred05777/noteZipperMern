@@ -1,5 +1,25 @@
 {
   "dependencies": {
-    "express": "^4.17.3"
-  }
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
+  "name": "notezippermern",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilfred05777/noteZipperMern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilfred05777/noteZipperMern/issues"
+  },
+  "homepage": "https://github.com/wilfred05777/noteZipperMern#readme",
+  "description": ""
 }
