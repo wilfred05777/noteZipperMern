@@ -61,6 +61,7 @@ function MyNotes({ history, search }) {
                 <h4>
                   <Badge variant="success">Category - {note.category}</Badge>
                 </h4>
+                <p>{note.content}</p>
                 <blockquote className="blockquote mb-0">
                   {/* <ReactMarkdown>{note.content}</ReactMarkdown> */}
                   <footer className="blockquote-footer">
