@@ -6,10 +6,10 @@ import userRoutes from "./routes/userRoutes.js";
 // https://github.com/piyush-eon/notezipper
 // https://www.youtube.com/watch?v=wtc3prRF9M0&list=PLKhlp2qtUcSYC7EffnHzD-Ws2xG-j3aYo&index=9
 
+const app = express();
 dotenv.config();
 connectDB();
-
-const app = express();
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("API is running");
