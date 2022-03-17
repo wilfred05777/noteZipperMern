@@ -2,17 +2,28 @@
 
 // https://www.youtube.com/watch?v=ekqeN_89F-M&list=PLKhlp2qtUcSYC7EffnHzD-Ws2xG-j3aYo&index=7
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, Badge, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MainScreen from "../MainScreen";
-import notes from "../../data/notes";
+// import notes from "../../data/notes";
+import axios from "axios";
 
 function MyNotes({ history, search }) {
+  const [notes, setNotes] = useState([]);
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
     }
   };
+
+  const fetchNotes = async () => {
+    const { data } = await axios.get("/api/notes");
+    // console.log(data);
+    setNotes(data);
+  };
+  useEffect(() => {
+    fetchNotes();
+  }, []);
 
   return (
     <MainScreen title="Welcome Back Wilfred">
@@ -26,7 +37,7 @@ function MyNotes({ history, search }) {
         </Button>
       </Link>
       {notes.map((note) => (
-        <Accordion>
+        <Accordion key={note._id}>
           <Card style={{ margin: 10 }} key={note._id}>
             <Card.Header style={{ display: "flex" }}>
               <span

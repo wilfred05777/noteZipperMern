@@ -1,11 +1,13 @@
-const express = require("express");
-const app = express();
-const notes = require("./data/notes");
-const dotenv = require("dotenv");
-
-// https://www.youtube.com/watch?v=H1BebGmRjzE&list=PLKhlp2qtUcSYC7EffnHzD-Ws2xG-j3aYo&index=4
+import express from "express";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
 
 // https://github.com/piyush-eon/notezipper
+// https://www.youtube.com/watch?v=wtc3prRF9M0&list=PLKhlp2qtUcSYC7EffnHzD-Ws2xG-j3aYo&index=9
+
+dotenv.config();
+connectDB();
+const app = express();
 
 app.get("/", (req, res) => {
   res.send("API is running");
